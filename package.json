@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "binance-api-node": "^0.10.14",
+    "dotenv": "^8.2.0",
+    "eosjs": "^21.0.3"
+  }
+}
