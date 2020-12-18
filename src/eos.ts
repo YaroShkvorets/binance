@@ -1,6 +1,6 @@
 import { Api, JsonRpc } from 'eosjs';
 import { JsSignatureProvider } from 'eosjs/dist/eosjs-jssig';
-import fetch from 'node-fetch';
+import { fetch } from 'node-fetch';
 import { TextEncoder, TextDecoder } from 'util';
 require("dotenv").config();
 
@@ -27,4 +27,18 @@ export async function getDefiboxPrice () {
       });
 
       return parseFloat(table.rows[0].price0_last);
+}
+
+export async function getDfsPrice () {
+
+  const table = await rpc.get_table_rows({
+      json: true,
+      code: 'defisswapcnt',
+      scope: 'defisswapcnt',
+      table: 'markets',
+      lower_bound: 17,      // EOS/USDT pair
+      limit: 1,
+    });
+
+    return parseFloat(table.rows[0].price0_last);
 }
