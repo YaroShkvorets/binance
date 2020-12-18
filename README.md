@@ -13,11 +13,11 @@ NODEOS_ENDPOINT="http://localhost:8888"
 ## Install
 
 ```
-$ npm install
+$ npm i
 ```
 
 ## Quickstart
 
 ```
-$ node index.js
+$ ts-node index.js
 ```

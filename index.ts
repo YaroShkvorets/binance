@@ -1,6 +1,6 @@
-const { timeout, getTime } = require('./src/utils.js');
-const { getBinancePrice } = require('./src/binance.js');
-const { getDefiboxPrice } = require('./src/eos.js');
+import { timeout, getTime } from './src/utils';
+import { getBinancePrice } from './src/binance';
+import { getDefiboxPrice } from './src/eos';
 
 
 (async () => {
