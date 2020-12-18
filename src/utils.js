@@ -6,7 +6,6 @@ exports.timeout = function( ms ) {
 
 exports.getTime = function( ) {
     var d = new Date();
-
-    return ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" + ("0" + d.getSeconds()).slice(-2) + "." + ("00" + d.getMilliseconds()).slice(-3);
+    return `${("0" + d.getHours()).slice(-2)}:${("0" + d.getMinutes()).slice(-2)}:${("0" + d.getSeconds()).slice(-2)}.${("00" + d.getMilliseconds()).slice(-3)}`;
 }
 
