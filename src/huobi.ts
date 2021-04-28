@@ -1,12 +1,18 @@
 import fetch from 'node-fetch';
 
+const tickers = {
+    "EOSUSDT": "eosusdt",
+    "USDTPBTC": "btcusdt",
+    "EOSPBTC": "eosbtc"
+}
 
-export async function getHuobiPrice() {
 
-    const response = await fetch('https://api.hbdm.com/api/v1/contract_index');
+export async function getHuobiPrice(ticker: string) {
+
+    const response = await fetch('https://api.huobi.pro/market/trade?symbol=' + tickers[ticker]);
     const json = await response.json();
-    const market = json.data.filter(( obj: any ) => obj.symbol == "EOS")[0];
+    const trade = json.tick.data[0];
 
-    return market.index_price;
+    return trade.price;
 }
 
